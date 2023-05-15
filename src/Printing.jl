@@ -387,7 +387,7 @@ subline(p::TablePrinter, args...) = ""
 function hline(p::TablePrinter)
     @unpack table_type = p.params
     table_type == :ascii && return "\n"*"-"^width(p)
-    table_type == :latex && return " \\hline"
+    table_type == :latex && return " \\midrule"
 end
 
 function hline(p::TablePrinter{N,M}, i::Int) where {N,M}
